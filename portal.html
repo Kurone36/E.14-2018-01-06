@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ogłoszenia</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style6.css">
+	<script type="text/javascript" >
+		var calculate = function isCheck() {
+			var isChecked=document.getElementById('i2').checked;
+			var value = document.getElementById('i1').value;
+			var multiplaya = 3;
+			var discount = 1;
+			if(value>40){
+				multiplaya=2; 
+			}
+			if(isChecked){
+				discount=0.3;
+			}
+			var wynik = Math.round(value * multiplaya * discount*100)/100;
+			document.getElementById('wynik').innerHTML = "Twoje ogłoszenia będą kosztować:" + " " + wynik + " " + "PLN.";
+		};
+
+	</script>
+</head>
+<body>
+	<header>
+		<h1>Ogłoszenia drobne</h1>
+	</header>
+		<div class="panele">
+			<h3>telefon</h3>
+			<p>601601601</p>
+		</div>
+		<div class="panele">
+			<h3>e-mail</h3>
+			<p>ogoszenia@poczta.pl</p>
+		</div>
+		<div class="panele">
+			<h3>Adres</h3>
+			<p>ul. Morska 45 Gdynia</p>
+		</div>
+		<div class="panele">
+			<img src="logo.png" alt="logo">
+		</div>
+		<div id="lewy">
+			<h2>Ceny</h2>
+			<table>
+				<tr>
+					<td>Ile?</td>
+					<td>Koszt</td>
+					<td>Upust</td>
+				</tr>
+				<tr>
+					<td>1 - 40</td>
+					<td>3 PLN</td>
+					<td rowspan="2">0,30 PLN dla stałych klientów</td>
+				</tr>
+				<tr>
+					<td>41 i więcej</td>
+					<td>2 PLN</td>
+				</tr>
+			</table>
+		</div>
+		<div id="srodkowy">
+			<h2>Policz koszt ogłoszenia</h2>
+				Liczba ogłoszeń:
+				<br>
+				<input type="number" id="i1">
+				<br>
+				<input type="checkbox" id="i2">
+				Jestem stałym klientem
+				<br>
+				<button onclick="calculate()">Kalkulacja</button>
+				<br>
+				<div id="wynik"></div>
+		</div>
+		
+		<div id="prawy">
+			<h2>Znajdujesz się na stronie portalu ogłoszeniowego</h2>
+			<img src="grafika.png" alt="Oblicz koszt ogłoszenia">
+		</div>
+		
+	<footer>
+		<p>Panel ogłoszeniowy opracował: 348756347</p>
+	</footer>
+
+</body>
+	
+
+</html>
